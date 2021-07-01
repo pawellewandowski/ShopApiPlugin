@@ -27,7 +27,7 @@
         >
             <argument type="service" id="sylius.shop_api_plugin.provider.current_user_provider" />
             <argument type="service" id="sylius_shop_api_plugin.command_bus" />
-            <tag name="messenger.message_handler"  bus="sylius_shop_api_plugin.event_bus"/>
+            <tag name="messenger.bus.default"  bus="sylius_shop_api_plugin.event_bus"/>
         </service>
 
         <service
@@ -35,7 +35,7 @@
             class="Sylius\ShopApiPlugin\EventListener\Messenger\OrderCompletedListener"
         >
             <argument type="service" id="sylius_shop_api_plugin.command_bus" />
-            <tag name="messenger.message_handler"  bus="sylius_shop_api_plugin.event_bus"/>
+            <tag name="messenger.bus.default"  bus="sylius_shop_api_plugin.event_bus"/>
         </service>
 
         <service id="sylius.shop_api_plugin.event_listener.user_cart_recalculation_listener"
